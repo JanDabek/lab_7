@@ -15,10 +15,11 @@ def dzielenie(liczba1, liczba2):
     else:
         return "Błąd: dzielenie przez zero!"
 
-def suma_kolumny(lista_liczb):
-    df = pd.DataFrame({'kolumna': lista_liczb})
-    return df['kolumna'].sum()
 
-def srednia_kolumny(lista_liczb):
-    df = pd.DataFrame({'kolumna': lista_liczb})
-    return df['kolumna'].mean()
+def znajdz_najwiecej(lista_liczb, kolumna='kolumna'):
+    df = pd.DataFrame({kolumna: lista_liczb})
+    return df[kolumna].max()
+
+def policz_wystapienia(lista_liczb, kolumna='kolumna'):
+    df = pd.DataFrame({kolumna: lista_liczb})
+    return df[kolumna].value_counts().to_dict()
